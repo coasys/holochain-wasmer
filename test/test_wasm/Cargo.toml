@@ -12,5 +12,5 @@ path = "src/wasm.rs"
 [dependencies]
 holochain_wasmer_guest = { path = "../../crates/guest" }
 test_common = { path = "../common" }
-holochain_serialized_bytes = "=0.0.54"
-serde = "1"
+holochain_serialized_bytes = { version = "=0.0.54", git = "https://github.com/coasys/holochain-serialization.git", rev = "6eaa4ea8913bfd977fcc4577e833f4dc18a215f7" }
+serde = "1.0.98"

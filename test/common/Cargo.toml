@@ -11,5 +11,5 @@ path = "src/common.rs"
 
 [dependencies]
 holochain_wasmer_common = { path = "../../crates/common" }
-serde = "1"
+serde = "1.0.98"
 serde_bytes = "0.11"
