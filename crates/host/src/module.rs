@@ -4,7 +4,6 @@ use bimap::BiMap;
 use bytes::BufMut;
 use bytes::Bytes;
 use bytes::BytesMut;
-use holochain_wasmer_common::WasmError;
 use parking_lot::Mutex;
 use parking_lot::RwLock;
 use std::collections::BTreeMap;
@@ -259,7 +258,7 @@ impl SerializedModuleCache {
         wasm: &[u8],
     ) -> Result<Arc<Module>, wasmer::RuntimeError> {
         let maybe_module_path = self.module_path(key);
-        let (module, serialized_module) = match maybe_module_path.as_ref().map(|module_path| {
+        let module_load = maybe_module_path.as_ref().map(|module_path| {
             // We do this the long way to get `Bytes` instead of `Vec<u8>` so
             // that the clone when we both deserialize and cache is cheap.
             let mut file = File::open(module_path).map_err(|e| {
@@ -279,7 +278,8 @@ impl SerializedModuleCache {
                 )))
             })?;
             Ok::<bytes::Bytes, wasmer::RuntimeError>(bytes_mut.into_inner().freeze())
-        }) {
+        });
+        let (module, serialized_module) = match module_load {
             Some(Ok(serialized_module)) => {
                 let deserialized_module =
                     unsafe { Module::deserialize(&self.runtime_engine, serialized_module.clone()) }

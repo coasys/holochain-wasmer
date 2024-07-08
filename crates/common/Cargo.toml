@@ -2,13 +2,13 @@
 name = "holochain_wasmer_common"
 description = "commons for both host and guest"
 license = "Apache-2.0"
-version = "0.0.94"
+version = "0.0.95"
 authors = ["thedavidmeister", "thedavidmeister@gmail.com"]
 edition = "2021"
 
 [dependencies]
-holochain_serialized_bytes = { version = "=0.0.54", git = "https://github.com/coasys/holochain-serialization.git", rev = "6eaa4ea8913bfd977fcc4577e833f4dc18a215f7" }
-serde = "1.0.98"
+holochain_serialized_bytes = "=0.0.55"
+serde = "1"
 thiserror = "1"
 serde_bytes = "0.11"
 test-fuzz = "=3.0.4"
@@ -18,4 +18,4 @@ default = []
 error_as_host = []
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-wasmer = "=4.2.8"
+wasmer = "=4.3.1"
