@@ -10,8 +10,8 @@ edition = "2021"
 wasmer = "=4.3.1"
 wasmer-middlewares = "=4.3.1"
 holochain_wasmer_common = { version = "=0.0.95", path = "../common" }
-holochain_serialized_bytes = "=0.0.55"
-serde = "1"
+holochain_serialized_bytes = { version = "=0.0.55", git = "https://github.com/coasys/holochain-serialization.git", rev = "f9577913773931ec797261f90968903b1b4e27a8"}
+serde = "1.0.98"
 tracing = "0.1"
 parking_lot = "0.12"
 rand = "0.8"

@@ -7,8 +7,8 @@ edition = "2021"
 [dependencies]
 holochain_wasmer_common = { path = "../crates/common", features = [] }
 holochain_wasmer_host = { path = "../crates/host" }
-holochain_serialized_bytes = "=0.0.55"
-serde = "1"
+holochain_serialized_bytes = { version = "=0.0.55", git = "https://github.com/coasys/holochain-serialization.git", rev = "f9577913773931ec797261f90968903b1b4e27a8"}
+serde = "1.0.98"
 test_common = { path = "./common" }
 criterion = { version = "0.5", features = ["html_reports"] }
 rand = "0.8"
