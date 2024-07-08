@@ -8,7 +8,7 @@ edition = "2021"
 
 [dependencies]
 wasmer = { version = "=4.3.3", git="https://github.com/fayeed/wasmer.git", rev = "ecc5593b62040fbec4e960ecf636e0f2c89bce08"}
-wasmer-middlewares = "=4.3.3"
+wasmer-middlewares = "=4.3.1"
 holochain_wasmer_common = { version = "=0.0.95", path = "../common" }
 holochain_serialized_bytes = { version = "=0.0.55", git = "https://github.com/coasys/holochain-serialization.git", rev = "f9577913773931ec797261f90968903b1b4e27a8"}
 serde = "1.0.98"
