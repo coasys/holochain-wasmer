@@ -16,7 +16,7 @@ wasmer = { version = "5.0.2", default-features = false }
 wasmer-middlewares = { version = "5.0.2", optional = true }
 
 holochain_wasmer_common = { version = "=0.0.99", path = "../common" }
-holochain_serialized_bytes = "=0.0.55"
+holochain_serialized_bytes = { version = "=0.0.56", git = "https://github.com/holochain/holochain-serialization"}
 serde = "1"
 tracing = "0.1"
 parking_lot = "0.12"
