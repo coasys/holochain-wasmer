@@ -1003,7 +1003,7 @@ dependencies = [
  "serde-transcode",
  "serde_bytes",
  "serde_json",
- "thiserror 2.0.12",
+ "thiserror 2.0.8",
 ]
 
 [[package]]
@@ -1012,7 +1012,7 @@ version = "0.0.56"
 source = "git+https://github.com/holochain/holochain-serialization#f88bdecf8065035021cf9c192167d44bdb906f51"
 dependencies = [
  "quote",
- "syn 2.0.101",
+ "syn 2.0.90",
 ]
 
 [[package]]
